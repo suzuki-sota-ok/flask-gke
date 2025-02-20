@@ -2,10 +2,10 @@ from google.cloud import firestore
 import os
 
 PROJECT_ID = os.environ.get('PROJECT_ID')
-DATABASE_ID = os.environ.get('DATABASE_ID')
+DATABASE_NAME = os.environ.get('DATABASE_NAME')
 db = firestore.Client(
     project=PROJECT_ID,
-    database=DATABASE_ID
+    database=DATABASE_NAME
 )
 
 def get_todos():
