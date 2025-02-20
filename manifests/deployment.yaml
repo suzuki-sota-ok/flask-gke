@@ -35,4 +35,4 @@ spec:
             ephemeral-storage: "1Gi"
         envFrom:
         - configMapRef:
-            name: flask-gke-config
+            name: flask-gke-configmap
