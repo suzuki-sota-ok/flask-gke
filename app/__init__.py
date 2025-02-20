@@ -1,5 +1,6 @@
 from flask import Flask
-from .views.home import home_bp, todo_bp
+from .views.home import home_bp
+from .views.todo import todo_bp
 
 def create_app():
     app = Flask(__name__)

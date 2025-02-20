@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from app.models import get_todos, add_todo, delete_todo
+from app.models.todo import get_todos, add_todo, delete_todo
 
 todo_bp = Blueprint('todo', __name__)
 
