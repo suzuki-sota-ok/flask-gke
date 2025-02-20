@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flask-gke-configmap
+data:
+  DATABASE_NAME: <YOUR_DATABASE_NAME> # ここにデータベース名を設定
+  PROJECT_ID: <YOUR_PROJECT_ID> # ここにプロジェクトIDを設定

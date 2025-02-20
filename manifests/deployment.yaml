@@ -12,11 +12,12 @@ spec:
       labels:
         app: flask-gke
     spec:
+      serviceAccountName: flask-gke-serviceaccount
       containers:
       - name: flask-gke-app
         # Replace $LOCATION with your Artifact Registry location (e.g., us-west1).
         # Replace $GCLOUD_PROJECT with your project ID.
-        image: asia-northeast1-docker.pkg.dev/mynavi-ifs-cspo3-dev/flask-gke-repo/flask-gke:latest
+        image: $LOCATION-docker.pkg.dev/$GCLOUD_PROJECT/flask-gke-repo/flask-gke:latest
         # This app listens on port 8080 for web traffic by default.
         ports:
         - containerPort: 8080
@@ -32,3 +33,6 @@ spec:
             memory: "1Gi"
             cpu: "500m"
             ephemeral-storage: "1Gi"
+        envFrom:
+        - configMapRef:
+            name: flask-gke-config
